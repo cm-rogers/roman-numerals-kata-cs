@@ -12,5 +12,13 @@ namespace RomanNumeralsKata.Tests
 
             romanNumeralsConverter.Convert(0).Should().Be("");
         }
+
+        [Fact]
+        public void ItReturnsIWhenTheDecimalIsOne()
+        {
+            var romanNumeralsConverter = new RomanNumeralsConverter();
+
+            romanNumeralsConverter.Convert(1).Should().Be("I");
+        }
     }
 }
