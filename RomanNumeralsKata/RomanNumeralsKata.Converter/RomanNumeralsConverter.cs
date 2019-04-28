@@ -9,6 +9,11 @@
                 return "I";
             }
 
+            if (decimalValue == 2)
+            {
+                return "II";
+            }
+
             return "";
         }
     }
