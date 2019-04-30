@@ -1,4 +1,5 @@
-﻿using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,7 +17,10 @@ namespace RomanNumeralsKata
     {
         public static string AddRepeat(this string s, string value, int count)
         {
-            return s += new string(value.ToCharArray()[0], count);
+            var valueArray = new string[count];
+            Array.Fill(valueArray, value, 0, count);
+            
+            return s + string.Join("", valueArray);
         }
     }
 
