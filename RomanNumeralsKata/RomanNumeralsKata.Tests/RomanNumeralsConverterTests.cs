@@ -28,5 +28,13 @@ namespace RomanNumeralsKata.Tests
 
             romanNumeralsConverter.Convert(2).Should().Be("II");
         }
+
+        [Fact]
+        public void ItReturnsIiiWhenTheDecimalIsThree()
+        {
+            var romanNumeralsConverter = new RomanNumeralsConverter();
+
+            romanNumeralsConverter.Convert(3).Should().Be("III");
+        }
     }
 }
