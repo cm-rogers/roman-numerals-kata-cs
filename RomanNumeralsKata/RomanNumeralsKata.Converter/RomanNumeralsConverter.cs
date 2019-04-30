@@ -44,7 +44,14 @@ namespace RomanNumeralsKata
                     new RomanNumeral(),
                     (result, numeral) =>
                     {
-                        var repeatCount = (decimalValue - result.DecimalValue) / numeral.DecimalValue;
+                        var differenceBetweenResultAndTargetDecimal = decimalValue - result.DecimalValue;
+
+                        if (differenceBetweenResultAndTargetDecimal == 0)
+                        {
+                            return result;
+                        }
+
+                        var repeatCount = differenceBetweenResultAndTargetDecimal / numeral.DecimalValue;
 
                         if (repeatCount < 1)
                         {
