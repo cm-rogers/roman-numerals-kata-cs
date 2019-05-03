@@ -43,5 +43,13 @@ namespace RomanNumeralsKata.Tests
 
             romanNumeralsConverter.Convert(4).Should().Be("IV");
         }
+
+        [Fact]
+        public void ItReturnsIxWhenTheDecimalIsNine()
+        {
+            var romanNumeralsConverter = new RomanNumeralsConverter();
+
+            romanNumeralsConverter.Convert(9).Should().Be("IX");
+        }
     }
 }
