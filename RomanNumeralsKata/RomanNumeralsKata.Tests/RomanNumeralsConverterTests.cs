@@ -32,6 +32,8 @@ namespace RomanNumeralsKata.Tests
         [InlineData(8, "VIII")]
         [InlineData(11, "XI")]
         [InlineData(18, "XVIII")]
+        [InlineData(21, "XXI")]
+        [InlineData(28, "XXVIII")]
         public void ItReturnsTheCorrectCompoundNumeral(int decimalValue, string expectedNumeral)
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
@@ -44,6 +46,8 @@ namespace RomanNumeralsKata.Tests
         [InlineData(9, "IX")]
         [InlineData(14, "XIV")]
         [InlineData(19, "XIX")]
+        [InlineData(24, "XXIV")]
+        [InlineData(29, "XXIX")]
         public void ItReturnsTheCorrectCompoundSubtractionNumeral(int decimalValue, string expectedNumeral)
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
