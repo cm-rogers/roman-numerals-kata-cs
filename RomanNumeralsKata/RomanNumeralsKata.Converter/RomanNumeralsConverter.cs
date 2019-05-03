@@ -30,6 +30,7 @@ namespace RomanNumeralsKata
     {
         private readonly IEnumerable<RomanNumeral> _numerals = new List<RomanNumeral>
         {
+            new RomanNumeral{DecimalValue = 40, NumeralValue = "XL"},
             new RomanNumeral{DecimalValue = 10, NumeralValue = "X"},
             new RomanNumeral{DecimalValue = 9, NumeralValue = "IX"},
             new RomanNumeral{DecimalValue = 5, NumeralValue = "V"},
