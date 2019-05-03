@@ -31,5 +31,13 @@ namespace RomanNumeralsKata.Tests
 
             romanNumeralsConverter.Convert(4).Should().Be("IV");
         }
+
+        [Fact]
+        public void ItReturnsVWhenTheDecimalIsFive()
+        {
+            var romanNumeralsConverter = new RomanNumeralsConverter();
+
+            romanNumeralsConverter.Convert(5).Should().Be("V");
+        }
     }
 }
