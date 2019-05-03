@@ -16,6 +16,7 @@ namespace RomanNumeralsKata.Tests
         [Theory]
         [InlineData(1, "I")]
         [InlineData(5, "V")]
+        [InlineData(10, "X")]
         public void ItReturnsTheCorrectSingularNumeral(int decimalValue, string expectedNumeral)
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
