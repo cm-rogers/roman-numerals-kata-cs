@@ -36,20 +36,14 @@ namespace RomanNumeralsKata.Tests
             romanNumeralsConverter.Convert(decimalValue).Should().Be(expectedNumeral);
         }
 
-        [Fact]
-        public void ItReturnsIvWhenTheDecimalIsFour()
+        [Theory]
+        [InlineData(4, "IV")]
+        [InlineData(9, "IX")]
+        public void ItReturnsTheCorrectCompoundSubtractionNumeral(int decimalValue, string expectedNumeral)
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
 
-            romanNumeralsConverter.Convert(4).Should().Be("IV");
-        }
-
-        [Fact]
-        public void ItReturnsIxWhenTheDecimalIsNine()
-        {
-            var romanNumeralsConverter = new RomanNumeralsConverter();
-
-            romanNumeralsConverter.Convert(9).Should().Be("IX");
+            romanNumeralsConverter.Convert(decimalValue).Should().Be(expectedNumeral);
         }
     }
 }
