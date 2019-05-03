@@ -15,6 +15,15 @@ namespace RomanNumeralsKata.Tests
 
         [Theory]
         [InlineData(1, "I")]
+        [InlineData(5, "V")]
+        public void ItReturnsTheCorrectSingularNumeral(int decimalValue, string expectedNumeral)
+        {
+            var romanNumeralsConverter = new RomanNumeralsConverter();
+
+            romanNumeralsConverter.Convert(decimalValue).Should().Be(expectedNumeral);
+        }
+
+        [Theory]
         [InlineData(2, "II")]
         [InlineData(3, "III")]
         [InlineData(6, "VI")]
@@ -33,14 +42,6 @@ namespace RomanNumeralsKata.Tests
             var romanNumeralsConverter = new RomanNumeralsConverter();
 
             romanNumeralsConverter.Convert(4).Should().Be("IV");
-        }
-
-        [Fact]
-        public void ItReturnsVWhenTheDecimalIsFive()
-        {
-            var romanNumeralsConverter = new RomanNumeralsConverter();
-
-            romanNumeralsConverter.Convert(5).Should().Be("V");
         }
     }
 }
