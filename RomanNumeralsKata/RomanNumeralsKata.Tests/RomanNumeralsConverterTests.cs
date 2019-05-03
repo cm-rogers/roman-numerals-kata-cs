@@ -12,5 +12,39 @@ namespace RomanNumeralsKata.Tests
 
             romanNumeralsConverter.Convert(0).Should().Be("");
         }
+
+        [Theory]
+        [InlineData(1, "I")]
+        [InlineData(5, "V")]
+        [InlineData(10, "X")]
+        public void ItReturnsTheCorrectSingularNumeral(int decimalValue, string expectedNumeral)
+        {
+            var romanNumeralsConverter = new RomanNumeralsConverter();
+
+            romanNumeralsConverter.Convert(decimalValue).Should().Be(expectedNumeral);
+        }
+
+        [Theory]
+        [InlineData(2, "II")]
+        [InlineData(3, "III")]
+        [InlineData(6, "VI")]
+        [InlineData(7, "VII")]
+        [InlineData(8, "VIII")]
+        public void ItReturnsTheCorrectCompoundNumeral(int decimalValue, string expectedNumeral)
+        {
+            var romanNumeralsConverter = new RomanNumeralsConverter();
+
+            romanNumeralsConverter.Convert(decimalValue).Should().Be(expectedNumeral);
+        }
+
+        [Theory]
+        [InlineData(4, "IV")]
+        [InlineData(9, "IX")]
+        public void ItReturnsTheCorrectCompoundSubtractionNumeral(int decimalValue, string expectedNumeral)
+        {
+            var romanNumeralsConverter = new RomanNumeralsConverter();
+
+            romanNumeralsConverter.Convert(decimalValue).Should().Be(expectedNumeral);
+        }
     }
 }
