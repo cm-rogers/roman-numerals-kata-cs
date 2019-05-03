@@ -19,6 +19,7 @@ namespace RomanNumeralsKata.Tests
         [InlineData(3, "III")]
         [InlineData(6, "VI")]
         [InlineData(7, "VII")]
+        [InlineData(8, "VIII")]
         public void ItReturnsTheCorrectCompoundNumeral(int decimalValue, string expectedNumeral)
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
