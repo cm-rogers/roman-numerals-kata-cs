@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,7 +8,7 @@ namespace RomanNumeralsKata
     {
         public static int AddRepeat(this int i, int value, int count)
         {
-            return i += ArrayList.Repeat(value, count).Cast<int>().Sum();
+            return i + value * count;
         }
     }
 
@@ -17,10 +16,7 @@ namespace RomanNumeralsKata
     {
         public static string AddRepeat(this string s, string value, int count)
         {
-            var valueArray = new string[count];
-            Array.Fill(valueArray, value, 0, count);
-            
-            return s + string.Join("", valueArray);
+            return s + string.Join("", ArrayList.Repeat(value, count).ToArray());
         }
     }
 
