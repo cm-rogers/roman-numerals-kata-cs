@@ -13,28 +13,15 @@ namespace RomanNumeralsKata.Tests
             romanNumeralsConverter.Convert(0).Should().Be("");
         }
 
-        [Fact]
-        public void ItReturnsIWhenTheDecimalIsOne()
+        [Theory]
+        [InlineData(1, "I")]
+        [InlineData(2, "II")]
+        [InlineData(3, "III")]
+        public void ItReturnsTheCorrectCompoundNumeral(int decimalValue, string expectedNumeral)
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
 
-            romanNumeralsConverter.Convert(1).Should().Be("I");
-        }
-
-        [Fact]
-        public void ItReturnsIiWhenTheDecimalIsTwo()
-        {
-            var romanNumeralsConverter = new RomanNumeralsConverter();
-
-            romanNumeralsConverter.Convert(2).Should().Be("II");
-        }
-
-        [Fact]
-        public void ItReturnsIiiWhenTheDecimalIsThree()
-        {
-            var romanNumeralsConverter = new RomanNumeralsConverter();
-
-            romanNumeralsConverter.Convert(3).Should().Be("III");
+            romanNumeralsConverter.Convert(decimalValue).Should().Be(expectedNumeral);
         }
 
         [Fact]
