@@ -11,7 +11,9 @@ namespace RomanNumeralsKata.Tests
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
 
-            romanNumeralsConverter.Convert(0).Should().Be("");
+            var value = romanNumeralsConverter.Convert(0);
+
+            value.Should().Be("");
         }
 
         [Fact]
@@ -38,7 +40,9 @@ namespace RomanNumeralsKata.Tests
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
 
-            romanNumeralsConverter.Convert(decimalValue).Should().Be(expectedNumeral);
+            var value = romanNumeralsConverter.Convert(decimalValue);
+
+            value.Should().Be(expectedNumeral);
         }
 
         [Theory]
@@ -68,7 +72,9 @@ namespace RomanNumeralsKata.Tests
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
 
-            romanNumeralsConverter.Convert(decimalValue).Should().Be(expectedNumeral);
+            var value = romanNumeralsConverter.Convert(decimalValue);
+
+            value.Should().Be(expectedNumeral);
         }
 
         [Theory]
@@ -94,7 +100,9 @@ namespace RomanNumeralsKata.Tests
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
 
-            romanNumeralsConverter.Convert(decimalValue).Should().Be(expectedNumeral);
+            var value = romanNumeralsConverter.Convert(decimalValue);
+
+            value.Should().Be(expectedNumeral);
         }
     }
 }
