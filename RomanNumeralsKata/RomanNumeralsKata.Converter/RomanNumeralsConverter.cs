@@ -41,31 +41,30 @@ namespace RomanNumeralsKata
 
         public string Convert(int decimalValue)
         {
-            return _numerals
-                .Aggregate(
-                    new RomanNumeral(),
-                    (result, numeral) =>
+            return _numerals.Aggregate(
+                new RomanNumeral(),
+                (result, numeral) =>
+                {
+                    var differenceBetweenResultAndTargetDecimal = decimalValue - result.DecimalValue;
+
+                    if (differenceBetweenResultAndTargetDecimal == 0)
                     {
-                        var differenceBetweenResultAndTargetDecimal = decimalValue - result.DecimalValue;
-
-                        if (differenceBetweenResultAndTargetDecimal == 0)
-                        {
-                            return result;
-                        }
-
-                        var repeatCount = differenceBetweenResultAndTargetDecimal / numeral.DecimalValue;
-
-                        if (repeatCount < 1)
-                        {
-                            return result;
-                        }
-
-                        result.NumeralValue = result.NumeralValue.AddRepeat(numeral.NumeralValue, repeatCount);
-                        result.DecimalValue = result.DecimalValue.AddRepeat(numeral.DecimalValue, repeatCount);
-
                         return result;
-                    })
-                .NumeralValue;
+                    }
+
+                    var repeatCount = differenceBetweenResultAndTargetDecimal / numeral.DecimalValue;
+
+                    if (repeatCount < 1)
+                    {
+                        return result;
+                    }
+
+                    result.NumeralValue = result.NumeralValue.AddRepeat(numeral.NumeralValue, repeatCount);
+                    result.DecimalValue = result.DecimalValue.AddRepeat(numeral.DecimalValue, repeatCount);
+
+                    return result;
+                }
+            ).NumeralValue;
         }
     }
 }
