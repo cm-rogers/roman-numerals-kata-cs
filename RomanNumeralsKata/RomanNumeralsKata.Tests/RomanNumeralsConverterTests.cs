@@ -1,3 +1,4 @@
+using System;
 using FluentAssertions;
 using Xunit;
 
@@ -11,6 +12,18 @@ namespace RomanNumeralsKata.Tests
             var romanNumeralsConverter = new RomanNumeralsConverter();
 
             romanNumeralsConverter.Convert(0).Should().Be("");
+        }
+
+        [Fact]
+        public void ItThrowsForNumbersOverThreeThousand()
+        {
+            var romanNumeralsConverter = new RomanNumeralsConverter();
+
+            var exception = Record.Exception(() => romanNumeralsConverter.Convert(3001));
+
+            Assert.NotNull(exception);
+            Assert.IsType<ArgumentOutOfRangeException>(exception);
+            exception.Message.Should().Contain("Values must be less than 3000");
         }
 
         [Theory]
