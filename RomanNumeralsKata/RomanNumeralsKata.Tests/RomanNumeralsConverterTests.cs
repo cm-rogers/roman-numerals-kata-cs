@@ -39,6 +39,10 @@ namespace RomanNumeralsKata.Tests
         [InlineData(38, "XXXVIII")]
         [InlineData(41, "XLI")]
         [InlineData(48, "XLVIII")]
+        [InlineData(55, "LV")]
+        [InlineData(66, "LXVI")]
+        [InlineData(77, "LXXVII")]
+        [InlineData(88, "LXXXVIII")]
         public void ItReturnsTheCorrectCompoundNumeral(int decimalValue, string expectedNumeral)
         {
             var romanNumeralsConverter = new RomanNumeralsConverter();
