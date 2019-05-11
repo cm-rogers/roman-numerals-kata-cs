@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -47,6 +48,11 @@ namespace RomanNumeralsKata
 
         public string Convert(int decimalValue)
         {
+            if (decimalValue > 3000)
+            {
+                throw new ArgumentOutOfRangeException(nameof(decimalValue), "Values must be less than 3000");
+            }
+
             return _numerals.Aggregate(
                 new RomanNumeral(),
                 (result, numeral) =>
